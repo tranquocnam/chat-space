@@ -15,7 +15,7 @@
 ## groupsテーブル
 |Column|Type|Options|index|
 |------|----|-------|-----|
-|groupname|string|
+|name|string|null: false|
 
 ### Association
 - has_many :messeges
