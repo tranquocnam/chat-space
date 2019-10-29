@@ -8,9 +8,9 @@
 |password|string|null: false|
 
 ### Association
-- has_many :messege
+- has_many :messeges
 - has_many :groups_users
-- has_many :groups :through: :groups_users
+- has_many :groups, through: :groups_users
 
 ## groupsテーブル
 |Column|Type|Options|index|
@@ -18,11 +18,11 @@
 |groupname|string|
 
 ### Association
-- has_many :messege
+- has_many :messeges
 - has_many :groups_users
-- has_many :users :through: :groups_users
+- has_many :users, through: :groups_users
 
-## messageテーブル
+## messagesテーブル
 |Column|Type|Options|index|
 |------|----|-------|-----|
 |body|text|
@@ -31,8 +31,8 @@
 |group_id|integer|null: false, foreign_key: true|○|
 
 ### Association
-- belongs_to :users
-- belongs_to :groups
+- belongs_to :user
+- belongs_to :group
 
 ## groups_usersテーブル
 
