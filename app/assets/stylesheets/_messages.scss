@@ -85,7 +85,7 @@
     &__messages{
       background: #fafafa;
       padding: 0 40px;
-      height: calc(100vh - 96px - 70px);
+      height: calc(100vh - 96px);
       overflow: scroll;
       &__box{
         margin-top: 46px;
@@ -104,8 +104,11 @@
     }
   }
     .form{
+      width: calc(100vw - 380px);
       padding: 20px 40px;
       background-color: #ddd;
+      position: fixed;
+      bottom: 0;
       .new_message{
         display: flex;
       }
