@@ -1,0 +1,20 @@
+.body
+  = render partial: 'messages/sidebar'
+  .main
+    .main__header
+      .main__header__box-left
+        .main__header__box-left__name
+          test-group
+        %ul.main__header__box-left__menber
+          Menber :
+          %li.main__header__box-left__menber__list
+            testuser
+      = link_to "", class:"main__header__btn" do
+        Edit
+    .main__messages
+      .main__messages__box
+        .main__messages__box__user
+          kenji
+        .main__messages__box__message
+          さよなら
+    = render partial: 'messages/form'
