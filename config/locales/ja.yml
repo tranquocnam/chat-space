@@ -1,7 +1,6 @@
 ---
 ja:
   attributes:
-    name: グループ名
   activerecord:
     errors:
       messages:
