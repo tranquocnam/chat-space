@@ -69,6 +69,9 @@
             font-size: 12px;
             color: #999999;
             display: flex;
+            &__list{
+              margin-left: 5px;
+            }
           }
       }
       &__btn{
@@ -89,17 +92,23 @@
       overflow: scroll;
       &__box{
         margin-top: 46px;
+        display: flex;
         &__user{
           margin-bottom: 10px;
           font-size: 16px;
           font-weight: bold;
           color: #434a54;
         }
-        &__message{
-          margin-bottom: 40px;
-          font-size: 14px;
-          color: #434a54;
+        &__date{
+          font-size: 12px;
+          color: #999999;
+          padding-left: 10px;
         }
+      }
+      &__message{
+        margin-bottom: 40px;
+        font-size: 14px;
+        color: #434a54;
       }
     }
   }
@@ -138,7 +147,7 @@
         background-color: #38aef0;
         color: $base_font_color;
       }
-      #message_image{
+      .message_image{
         display: none;
       }
     }
