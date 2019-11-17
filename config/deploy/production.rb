@@ -8,7 +8,7 @@
 # server "db.example.com", user: "deploy", roles: %w{db}
 server '3.115.120.132', user: 'ec2-user', roles: %w{app db web}
 lock '3.11.2'
-set :application 'chat-space'
+set :application, 'chat-space'
 set :repo_url, 'git@github.com:tranquocnam/chat-space.git'
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
 
