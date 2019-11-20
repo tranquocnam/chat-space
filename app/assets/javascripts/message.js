@@ -1,7 +1,7 @@
 $(function () {
   
   function buildMessage(message) {
-    let image = (message.image) ? `<img src=${message.image} >`:'';
+    let image = (message.image) ? `<img src=${message.image} >` : '';
     let html = `<div class='main__messages__box' data-message-id='${message.id}'>
                   <div class='main__messages__box__upper'>
                     <div class='main__messages__box__upper__user'>
@@ -44,10 +44,10 @@ $(function () {
   });
   let reloadMessages = function () {
     if (window.location.href.match(/\/groups\/\d+\/messages/)) {
-      let last_message_id = $('.main__message__box').last().data('message-id');
+      let last_message_id = $('.main__messages__box:last').data('message-id');
     
       $.ajax({
-        url: 'api/messages',
+        url: 'api/messages#index { format: json }',
         type: 'GET',
         dataType: 'json',
         data: { id: last_message_id }
@@ -57,15 +57,13 @@ $(function () {
           messages.forEach(function (message) {
             insertHTML = buildMessage(message)
             $('.main__messages').append(insertHTML);
-          })
-          if (message.id > last_message_id) {
             $('.main__messages').animate({ scrollTop: $('.main__messages')[0].scrollHeight });
-          }
+          })
         })
         .fail(function () {
           alert('自動更新に失敗しました');
         });
-    }
+    };
   };
-  setInterval(reloadMessages, 7000);
+    setInterval(reloadMessages, 7000);
 });
