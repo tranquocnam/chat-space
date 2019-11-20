@@ -47,7 +47,7 @@ $(function () {
       let last_message_id = $('.main__messages__box:last').data('message-id');
     
       $.ajax({
-        url: 'api/messages#index { format: json }',
+        url: 'api/messages',
         type: 'GET',
         dataType: 'json',
         data: { id: last_message_id }
