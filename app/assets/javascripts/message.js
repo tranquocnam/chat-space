@@ -2,21 +2,14 @@ $(function () {
   
   function buildMessage(message) {
     let image = (message.image) ? `<img src=${message.image} >` : '';
-    let html = `<div class='main__messages__box' data-message-id='${message.id}'>
-                  <div class='main__messages__box__upper'>
-                    <div class='main__messages__box__upper__user'>
-                      ${message.user_name}
-                    </div>
-                    <div class='main__messages__box__upper__date'>
-                      ${message.date}
-                    </div>
+    let html = `<div class="main__messages__box" data-message-id="${message.id}">
+                  <div class="main__messages__box__upper">
+                    <p class="main__messages__box__upper__user">${message.user_name}</p>
+                    <p class="main__messages__box__upper__date">${message.date}</p>
                   </div>
-                  <div class='main__messages__box__message'></div>
-                    <p>
-                      ${message.content}
-                    </p>
-                    ${image}
-                  </div>`
+                  <p class="main__messages__box__message">${message.content}</p>
+                  ${image}
+                </div>`
     return html
   }
   $('#new_message').on('submit', function (e) {
